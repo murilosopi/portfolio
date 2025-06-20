@@ -3,7 +3,7 @@ on:
   push:
     branches: ['main']
 jobs:
-  test and lint:
+  test_and_lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    needs: test and lint
+    needs: test_and_lint
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 20.x
