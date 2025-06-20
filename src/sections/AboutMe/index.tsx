@@ -1,13 +1,13 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import styles from "./AboutMe.module.css";
-import { Icon } from "../../components/Icon";
-import { SectionTitle } from "../../components/SectionTitle";
+import styles from './AboutMe.module.css';
+import { Icon } from '../../components/Icon';
+import { SectionTitle } from '../../components/SectionTitle';
 
 export const AboutMe = () => {
   return (
-    <section className={styles["about-me"]}>
-      <article className={styles["about-me__lead"]}>
+    <section className={styles['about-me']}>
+      <article className={styles['about-me__lead']}>
         <SectionTitle
           prelude={
             <>
@@ -18,23 +18,23 @@ export const AboutMe = () => {
           heading='Software Developer'
         />
 
-        <p className={styles["about-me__lead-text"]}>
+        <p className={styles['about-me__lead-text']}>
           {
             "A text to inspire the public. Wow. That's a really amazing phrase..."
           }
         </p>
       </article>
-      <figure className={styles["about-me__avatar-wrapper"]}>
+      <figure className={styles['about-me__avatar-wrapper']}>
         <Image
-          className={styles["about-me__avatar"]}
-          src={"/images/avatar.jpg"}
+          className={styles['about-me__avatar']}
+          src={'/images/avatar.jpg'}
           alt='a man with black, long and curly hair'
           width={410}
           height={410}
         />
       </figure>
 
-      <nav className={styles["about-me__nav"]}>
+      <nav className={styles['about-me__nav']}>
         <Icon
           type='github'
           size='xl'

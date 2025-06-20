@@ -1,16 +1,16 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import styles from "./Icon.module.css";
-import classNames from "classnames";
+import styles from './Icon.module.css';
+import classNames from 'classnames';
 
-export type IconType = "envelope" | "github" | "linkedin" | "twitch";
-export type IconSize = "sm" | "md" | "lg" | "xl" | "xxl";
+export type IconType = 'envelope' | 'github' | 'linkedin' | 'twitch';
+export type IconSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
 const classNameMap: Record<IconType, string> = {
-  envelope: "bi bi-envelope",
-  github: "bi bi-github",
-  linkedin: "bi bi-linkedin",
-  twitch: "bi bi-twitch"
+  envelope: 'bi bi-envelope',
+  github: 'bi bi-github',
+  linkedin: 'bi bi-linkedin',
+  twitch: 'bi bi-twitch'
 };
 
 type IconProps = {
@@ -20,7 +20,7 @@ type IconProps = {
 
 export const Icon = ({
   type,
-  size = "md",
+  size = 'md',
   className: classNameProp,
   ...props
 }: IconProps) => {

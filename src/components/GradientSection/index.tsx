@@ -1,9 +1,9 @@
-import classNames from "classnames";
-import styles from "./GradientSection.module.css";
+import classNames from 'classnames';
+import styles from './GradientSection.module.css';
 
 export enum GradientVariants {
-  ToDark = "to-dark",
-  FromDark = "from-dark"
+  ToDark = 'to-dark',
+  FromDark = 'from-dark'
 }
 
 interface GradientSectionProps {
@@ -18,7 +18,7 @@ export const GradientSection = ({
   return (
     <section
       className={classNames(
-        styles["gradient-section"],
+        styles['gradient-section'],
         styles[`gradient-section--${variant}`]
       )}
     >

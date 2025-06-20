@@ -1,9 +1,9 @@
-import styles from "./Journey.module.css";
-import { SectionTitle } from "../../components/SectionTitle";
+import styles from './Journey.module.css';
+import { SectionTitle } from '../../components/SectionTitle';
 
 export const Journey = () => {
   return (
-    <section className={styles["journey"]}>
+    <section className={styles['journey']}>
       <SectionTitle
         prelude={
           <>

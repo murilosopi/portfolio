@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./SectionTitle.module.css";
-import { Heading } from "../Heading";
+import React from 'react';
+import styles from './SectionTitle.module.css';
+import { Heading } from '../Heading';
 
 interface SectionTitleProps {
   heading: React.ReactNode;
@@ -15,7 +15,7 @@ export const SectionTitle = ({
 }: SectionTitleProps) => {
   return (
     <div>
-      {prelude && <p className={styles["section-title__prelude"]}>{prelude}</p>}
+      {prelude && <p className={styles['section-title__prelude']}>{prelude}</p>}
 
       <Heading
         as='h2'
@@ -25,7 +25,7 @@ export const SectionTitle = ({
       </Heading>
 
       {postlude && (
-        <p className={styles["section-title__postlude"]}>{postlude}</p>
+        <p className={styles['section-title__postlude']}>{postlude}</p>
       )}
     </div>
   );
