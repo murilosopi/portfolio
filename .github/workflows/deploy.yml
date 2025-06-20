@@ -27,3 +27,21 @@ jobs:
           node-version: '20.x'
       - run: npm install
       - run: npm run release --if-present
+  deploy:
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: |
+          npm install --global vercel
+          vercel pull --yes --environment=production --token=VERCEL_TOKEN
+          vercel build --token=VERCEL_TOKEN
+          vercel deploy --prebuilt  --token=VERCEL_TOKEN
