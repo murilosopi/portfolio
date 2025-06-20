@@ -5,10 +5,10 @@
   min-height: 100vh;
 }
 
-.gradient-section--to-dark {
+.gradient-section--primary-darken-to-dark {
   background: var(--vertical-gradient-primary-darken-to-dark);
 }
 
-.gradient-section--from-dark {
+.gradient-section--dark-to-primary-darken {
   background: var(--vertical-gradient-dark-to-primary-darken);
 }
