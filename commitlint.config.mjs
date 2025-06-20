@@ -17,6 +17,7 @@ const config = {
         'revert'
       ]
     ],
+    'scope-empty': [2, 'always'],
     'subject-case': [2, 'never', ['sentence-case', 'start-case']]
   }
 };
