@@ -3,7 +3,7 @@ import styles from "./GradientSection.module.css";
 
 export enum GradientVariants {
   ToDark = "to-dark",
-  FromDark = "from-dark",
+  FromDark = "from-dark"
 }
 
 interface GradientSectionProps {
@@ -13,7 +13,7 @@ interface GradientSectionProps {
 
 export const GradientSection = ({
   children,
-  variant = GradientVariants.FromDark,
+  variant = GradientVariants.FromDark
 }: GradientSectionProps) => {
   return (
     <section

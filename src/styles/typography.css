@@ -11,7 +11,7 @@
   --font-size-xl: 1.25rem;
   --font-size-xxl: 1.75rem;
   --font-size-xxxl: 2rem;
-  
+
   --font-size-h1: clamp(3rem, 2.286rem + 3.57vw, 5.5rem);
   --font-size-h2: clamp(2.25rem, 1.822rem + 2.14vw, 3.75rem);
   --font-size-h3: clamp(1.75rem, 1.536rem + 1.07vw, 2.5rem);

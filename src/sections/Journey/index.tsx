@@ -10,7 +10,7 @@ export const Journey = () => {
             Know my <strong>experiencies</strong> exploring my
           </>
         }
-        heading="Journey"
+        heading='Journey'
       />
     </section>
   );

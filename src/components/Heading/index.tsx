@@ -18,11 +18,14 @@ export const Heading = ({
 }: HeadingProps) => {
   const className = classNames(styles.heading, {
     [styles[`heading--${variant}`]]: !!variant,
-    [classNameProp]: !!classNameProp,
+    [classNameProp]: !!classNameProp
   });
 
   return (
-    <Tag className={className} {...props}>
+    <Tag
+      className={className}
+      {...props}
+    >
       {children}
     </Tag>
   );

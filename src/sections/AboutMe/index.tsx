@@ -15,7 +15,7 @@ export const AboutMe = () => {
               <strong>Murilo Sopi</strong>,
             </>
           }
-          heading="Software Developer"
+          heading='Software Developer'
         />
 
         <p className={styles["about-me__lead-text"]}>
@@ -28,17 +28,33 @@ export const AboutMe = () => {
         <Image
           className={styles["about-me__avatar"]}
           src={"/images/avatar.jpg"}
-          alt="a man with black, long and curly hair"
+          alt='a man with black, long and curly hair'
           width={410}
           height={410}
         />
       </figure>
 
       <nav className={styles["about-me__nav"]}>
-        <Icon type="github" size="xl" title="Github" />
-        <Icon type="linkedin" size="xl" title="LinkedIn" />
-        <Icon type="twitch" size="xl" title="Twitch" />
-        <Icon type="envelope" size="xl" title="E-mail" />
+        <Icon
+          type='github'
+          size='xl'
+          title='Github'
+        />
+        <Icon
+          type='linkedin'
+          size='xl'
+          title='LinkedIn'
+        />
+        <Icon
+          type='twitch'
+          size='xl'
+          title='Twitch'
+        />
+        <Icon
+          type='envelope'
+          size='xl'
+          title='E-mail'
+        />
       </nav>
     </section>
   );

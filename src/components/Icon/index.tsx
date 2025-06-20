@@ -10,7 +10,7 @@ const classNameMap: Record<IconType, string> = {
   envelope: "bi bi-envelope",
   github: "bi bi-github",
   linkedin: "bi bi-linkedin",
-  twitch: "bi bi-twitch",
+  twitch: "bi bi-twitch"
 };
 
 type IconProps = {
@@ -31,5 +31,10 @@ export const Icon = ({
     styles[`icon--${size}`]
   );
 
-  return <span className={className} {...props} />;
+  return (
+    <span
+      className={className}
+      {...props}
+    />
+  );
 };

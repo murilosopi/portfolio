@@ -4,14 +4,14 @@ import "@/styles/index.css";
 
 export const metadata: Metadata = {
   title: "Murilo Sopi",
-  description: "Teste",
+  description: "Teste"
 };
 
 const firaCode = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-fira-code",
+  variable: "--font-fira-code"
 });
 
 const firaSans = Fira_Sans_Extra_Condensed({
@@ -19,16 +19,19 @@ const firaSans = Fira_Sans_Extra_Condensed({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-fira-sans",
+  variable: "--font-fira-sans"
 });
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
+    <html
+      lang='en'
+      className={`${firaSans.variable} ${firaCode.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

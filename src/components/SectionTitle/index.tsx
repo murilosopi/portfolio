@@ -11,13 +11,16 @@ interface SectionTitleProps {
 export const SectionTitle = ({
   heading,
   prelude,
-  postlude,
+  postlude
 }: SectionTitleProps) => {
   return (
     <div>
       {prelude && <p className={styles["section-title__prelude"]}>{prelude}</p>}
 
-      <Heading as="h2" variant="primary">
+      <Heading
+        as='h2'
+        variant='primary'
+      >
         {heading}
       </Heading>
 

@@ -3,7 +3,7 @@ import { Journey } from "@/sections/Journey";
 import { Container } from "@/components/Container";
 import {
   GradientVariants,
-  GradientSection,
+  GradientSection
 } from "@/components/GradientSection";
 
 export default function Home() {
