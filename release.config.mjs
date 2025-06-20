@@ -1,0 +1,29 @@
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
+export default {
+  branches: ['main'],
+  plugins: [
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'conventionalcommits',
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING']
+        }
+      }
+    ],
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        preset: 'conventionalcommits',
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING']
+        }
+      }
+    ],
+    '@semantic-release/github',
+    '@semantic-release/git',
+    '@semantic-release/changelog'
+  ]
+};
