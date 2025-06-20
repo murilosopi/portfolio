@@ -1,0 +1,14 @@
+.gradient-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.gradient-section--to-dark {
+  background: var(--vertical-gradient-primary-darken-to-dark);
+}
+
+.gradient-section--from-dark {
+  background: var(--vertical-gradient-dark-to-primary-darken);
+}

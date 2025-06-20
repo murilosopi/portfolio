@@ -1,0 +1,43 @@
+.about-me {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "lead avatar"
+    "lead nav";
+  justify-content: center;
+  row-gap: var(--spacing-xl);
+  column-gap: var(--spacing-xxxl);
+  margin: auto;
+}
+
+.about-me__lead {
+  grid-area: lead;
+}
+
+.about-me__avatar-wrapper {
+  grid-area: avatar;
+}
+
+.about-me__nav {
+  grid-area: nav;
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me__avatar {
+  transition: 0.2s;
+  border-radius: 140px;
+  width: 410px;
+  aspect-ratio: 1/1;
+  filter: grayscale(1);
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+
+.about-me__lead-text {
+  font-size: var(--font-size-xxl);
+}

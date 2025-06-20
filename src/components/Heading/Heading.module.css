@@ -1,0 +1,8 @@
+.heading {
+  font-family: var(--font-fira-sans);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.heading--primary {
+  color: var(--color-primary);
+}

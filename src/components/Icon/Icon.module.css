@@ -1,0 +1,22 @@
+.icon {
+  color: var(--color-light);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  transition: color 0.1s ease-in-out;
+}
+
+.icon--sm {
+  font-size: var(--spacing-md);
+}
+.icon--md {
+  font-size: var(--spacing-lg);
+}
+.icon--lg {
+  font-size: var(--spacing-xl);
+}
+.icon--xl {
+  font-size: var(--spacing-xxl);
+}
