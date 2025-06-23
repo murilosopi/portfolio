@@ -3,9 +3,10 @@ export enum ColorVariants {
   PrimaryCondensed = 'primary-condensed',
   PrimaryDarken = 'primary-darken',
   Light = 'light',
-  Dark = 'dark',
-  White = 'white'
+  Dark = 'dark'
 }
+
+export type ColorVariant = `${ColorVariants}`;
 
 export enum GradientVariants {
   PrimaryDarkenToDark = 'primary-darken-to-dark',

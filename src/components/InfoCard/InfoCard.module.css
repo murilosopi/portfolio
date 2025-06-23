@@ -9,6 +9,10 @@
   z-index: 0;
 }
 
+.info-card:not(:has(.info-card__left-icon, .info-card__right-icon)):hover {
+  background-color: var(--color-primary-condensed);
+}
+
 /* background animation elements */
 .info-card::before,
 .info-card::after {
@@ -23,24 +27,32 @@
 }
 
 /* only left icon: expand from left */
-.info-card:has(.info-card__left-icon):not(:has(.info-card__right-icon))::before {
+.info-card:has(.info-card__left-icon):not(
+    :has(.info-card__right-icon)
+  )::before {
   left: 0;
   width: 100%;
   transform-origin: left center;
 }
 
-.info-card:has(.info-card__left-icon):not(:has(.info-card__right-icon)):hover::before {
+.info-card:has(.info-card__left-icon):not(
+    :has(.info-card__right-icon)
+  ):hover::before {
   transform: scaleX(1);
 }
 
 /* only right icon: expand from right */
-.info-card:has(.info-card__right-icon):not(:has(.info-card__left-icon))::before {
+.info-card:has(.info-card__right-icon):not(
+    :has(.info-card__left-icon)
+  )::before {
   right: 0;
   width: 100%;
   transform-origin: right center;
 }
 
-.info-card:has(.info-card__right-icon):not(:has(.info-card__left-icon)):hover::before {
+.info-card:has(.info-card__right-icon):not(
+    :has(.info-card__left-icon)
+  ):hover::before {
   transform: scaleX(1);
 }
 

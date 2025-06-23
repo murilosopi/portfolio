@@ -2,7 +2,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import styles from './Icon.module.css';
 import classNames from 'classnames';
-import { ColorVariants } from '@/constants/colors';
+import { ColorVariant } from '@/constants/colors';
 
 export type IconType =
   | 'envelope'
@@ -25,16 +25,16 @@ const classNameMap: Record<IconType, string> = {
 type IconProps = {
   type: IconType;
   size?: IconSize;
-  fill?: ColorVariants;
-  hoverFill?: ColorVariants;
+  fill?: ColorVariant;
+  hoverFill?: ColorVariant;
 } & React.HTMLAttributes<HTMLElement>;
 
 export const Icon = ({
   type,
   size = 'md',
   className: classNameProp,
-  fill = ColorVariants.White,
-  hoverFill = ColorVariants.Primary,
+  fill = 'light',
+  hoverFill = 'primary',
   ...props
 }: IconProps) => {
   const className = classNames(
