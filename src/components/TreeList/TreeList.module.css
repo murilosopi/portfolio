@@ -64,6 +64,8 @@
 
 .tree-list__item {
   position: relative;
+  display: flex;
+  width: 40%;
 }
 
 .tree-list__item::before {
@@ -88,10 +90,10 @@
 
 .tree-list__item[data-side='left'] {
   margin-right: auto;
-  width: 40%;
+  justify-content: flex-end;
 }
 
 .tree-list__item[data-side='right'] {
   margin-left: auto;
-  width: 40%;
+  justify-content: flex-start;
 }

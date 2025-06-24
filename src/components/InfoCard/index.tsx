@@ -4,16 +4,23 @@ import { Icon, IconType } from '../Icon';
 import { ColorVariant } from '@/constants/colors';
 import { If } from '../If';
 
-interface InfoCardProps {
+type InfoCardProps = {
   children: React.ReactNode;
   rightIcon?: IconType;
   leftIcon?: IconType;
   variant?: ColorVariant;
-}
+} & React.HTMLAttributes<HTMLElement>;
 
 import styles from './InfoCard.module.css';
+import classNames from 'classnames';
 
-export const InfoCard = ({ leftIcon, rightIcon, children }: InfoCardProps) => {
+export const InfoCard = ({
+  leftIcon,
+  rightIcon,
+  children,
+  className,
+  ...props
+}: InfoCardProps) => {
   const [iconFill, setIconFill] = useState<ColorVariant>('primary');
 
   const handleMouseEnter = () => {
@@ -26,9 +33,10 @@ export const InfoCard = ({ leftIcon, rightIcon, children }: InfoCardProps) => {
 
   return (
     <article
-      className={styles['info-card']}
+      className={classNames(styles['info-card'], className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <If condition={!!leftIcon}>
         <div className={styles['info-card__icon-wrapper']}>

@@ -1,4 +1,4 @@
-.about-me {
+.about-me-section {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
@@ -10,15 +10,15 @@
   margin: auto;
 }
 
-.about-me__lead {
+.about-me-section__lead {
   grid-area: lead;
 }
 
-.about-me__avatar-wrapper {
+.about-me-section__avatar-wrapper {
   grid-area: avatar;
 }
 
-.about-me__nav {
+.about-me-section__nav {
   grid-area: nav;
   display: flex;
   gap: var(--spacing-lg);
@@ -26,7 +26,7 @@
   justify-content: center;
 }
 
-.about-me__avatar {
+.about-me-section__avatar {
   transition: 0.2s;
   border-radius: 140px;
   width: 410px;
@@ -38,6 +38,6 @@
   }
 }
 
-.about-me__lead-text {
+.about-me-section__lead-text {
   font-size: var(--font-size-xxl);
 }

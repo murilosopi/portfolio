@@ -5,7 +5,7 @@ interface TreeProps {
   variant?: ColorVariant;
 }
 
-interface TreeItem {
+export interface TreeItem {
   key: string;
   content: React.ReactNode;
   side: 'left' | 'right';
