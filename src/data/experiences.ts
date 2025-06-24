@@ -1,6 +1,6 @@
-import { Experience } from '@/types/expirience';
+import { Experience } from '@/types/experience';
 
-export const expiriencies: Experience[] = [
+export const experiences: Experience[] = [
   {
     id: '1',
     type: 'education',

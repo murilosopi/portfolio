@@ -1,10 +1,10 @@
-import { expiriencies } from '@/data/expiriencies';
+import { experiences } from '@/data/experiences';
 import { SectionTitle } from '../../components/SectionTitle';
-import { ExpiriencyTree } from './components/ExpiriencyTree';
-import { sortExpiriencies } from '@/utils/expiriencies';
+import { ExperienceTree } from './components/ExperienceTree';
+import { sortExperiences } from '@/utils/experiences';
 
 export const JourneySection = () => {
-  const sortedExpiriencies = sortExpiriencies({ expiriencies });
+  const sortedExperiences = sortExperiences({ experiences });
 
   return (
     <section>
@@ -17,7 +17,7 @@ export const JourneySection = () => {
         heading='Journey'
       />
 
-      <ExpiriencyTree expiriences={sortedExpiriencies} />
+      <ExperienceTree experiences={sortedExperiences} />
     </section>
   );
 };

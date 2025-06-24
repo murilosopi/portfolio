@@ -1,16 +1,16 @@
 import { InfoCard } from '@/components/InfoCard';
-import { Experience } from '@/types/expirience';
-import styles from './ExpiriencyCard.module.css';
+import { Experience } from '@/types/experience';
+import styles from './ExperienceCard.module.css';
 
-interface ExpiriencyCardProps {
+interface ExperienceCardProps {
   experience: Experience;
   side?: 'left' | 'right';
 }
 
-export const ExpiriencyCard = ({
+export const ExperienceCard = ({
   experience,
   side = 'left'
-}: ExpiriencyCardProps) => {
+}: ExperienceCardProps) => {
   const { type, description } = experience;
 
   const props = {
@@ -19,7 +19,7 @@ export const ExpiriencyCard = ({
 
   return (
     <InfoCard
-      className={styles['expirience-card']}
+      className={styles['experience-card']}
       {...props}
     >
       {description}
