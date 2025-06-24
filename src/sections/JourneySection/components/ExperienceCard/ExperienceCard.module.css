@@ -2,3 +2,25 @@
   display: flex;
   width: 100%;
 }
+
+.experience-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+}
+
+.experience-card__actions {
+  display: flex;
+  align-items: center;
+}
+
+.experience-card--left .experience-card__actions {
+  justify-content: flex-end;
+}
+
+.experience-card--right .experience-card__actions {
+  justify-content: flex-start;
+}

@@ -81,6 +81,7 @@
 
 /* content area */
 .info-card__content {
+  flex-grow: 1;
   padding: var(--spacing-lg, --spacing-md);
   font-size: var(--font-size-lg);
 }

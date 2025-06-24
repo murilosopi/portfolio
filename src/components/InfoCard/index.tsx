@@ -50,9 +50,7 @@ export const InfoCard = ({
         </div>
       </If>
 
-      <div>
-        <div className={styles['info-card__content']}>{children}</div>
-      </div>
+      <div className={styles['info-card__content']}>{children}</div>
 
       <If condition={!!rightIcon}>
         <div className={styles['info-card__icon-wrapper']}>

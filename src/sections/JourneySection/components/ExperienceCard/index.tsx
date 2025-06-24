@@ -1,6 +1,8 @@
 import { InfoCard } from '@/components/InfoCard';
 import { Experience } from '@/types/experience';
 import styles from './ExperienceCard.module.css';
+import { Button } from '@/components/Button';
+import classNames from 'classnames';
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -19,10 +21,19 @@ export const ExperienceCard = ({
 
   return (
     <InfoCard
-      className={styles['experience-card']}
+      className={classNames(
+        styles['experience-card'],
+        styles[`experience-card--${side}`]
+      )}
       {...props}
     >
-      {description}
+      <div className={styles['experience-card__content']}>
+        <p className={styles['experience-card__description']}>{description}</p>
+
+        <div className={styles['experience-card__actions']}>
+          <Button variant='light'>Details</Button>
+        </div>
+      </div>
     </InfoCard>
   );
 };
