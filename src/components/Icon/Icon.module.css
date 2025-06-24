@@ -1,11 +1,5 @@
 .icon {
-  color: var(--color-light);
-
-  &:hover {
-    color: var(--color-primary);
-  }
-
-  transition: color 0.1s ease-in-out;
+  transition: color var(--transition-dynamic);
 }
 
 .icon--sm {
@@ -19,4 +13,55 @@
 }
 .icon--xl {
   font-size: var(--spacing-xxl);
+}
+.icon--xxl {
+  font-size: var(--spacing-xxxl);
+}
+
+.icon--fill-primary {
+  color: var(--color-primary);
+}
+
+.icon--fill-primary-condensed {
+  color: var(--color-primary-condensed);
+}
+
+.icon--fill-primary-darken {
+  color: var(--color-primary-darken);
+}
+
+.icon--fill-light {
+  color: var(--color-light);
+}
+
+.icon--fill-dark {
+  color: var(--color-dark);
+}
+
+.icon--fill-white {
+  color: var(--color-white);
+}
+
+.icon--hover-fill-primary:hover {
+  color: var(--color-primary);
+}
+
+.icon--hover-fill-primary-condensed:hover {
+  color: var(--color-primary-condensed);
+}
+
+.icon--hover-fill-primary-darken:hover {
+  color: var(--color-primary-darken);
+}
+
+.icon--hover-fill-light:hover {
+  color: var(--color-light);
+}
+
+.icon--hover-fill-dark:hover {
+  color: var(--color-dark);
+}
+
+.icon--hover-fill-white:hover {
+  color: var(--color-white);
 }

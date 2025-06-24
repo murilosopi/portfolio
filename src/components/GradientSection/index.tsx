@@ -1,10 +1,6 @@
 import classNames from 'classnames';
 import styles from './GradientSection.module.css';
-
-export enum GradientVariants {
-  ToDark = 'to-dark',
-  FromDark = 'from-dark'
-}
+import { GradientVariants } from '@/constants/colors';
 
 interface GradientSectionProps {
   children: React.ReactNode;
@@ -13,7 +9,7 @@ interface GradientSectionProps {
 
 export const GradientSection = ({
   children,
-  variant = GradientVariants.FromDark
+  variant = GradientVariants.DarkToPrimaryDarken
 }: GradientSectionProps) => {
   return (
     <section

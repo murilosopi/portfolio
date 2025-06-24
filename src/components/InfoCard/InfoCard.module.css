@@ -1,0 +1,102 @@
+/* base styles */
+.info-card {
+  display: inline-flex;
+  background-color: var(--color-primary);
+  border-radius: var(--spacing-sm);
+  transition: background-color var(--transition-dynamic);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.info-card:not(:has(.info-card__left-icon, .info-card__right-icon)):hover {
+  background-color: var(--color-primary-condensed);
+}
+
+/* background animation elements */
+.info-card::before,
+.info-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: var(--color-primary-condensed);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+/* only left icon: expand from left */
+.info-card:has(.info-card__left-icon):not(
+    :has(.info-card__right-icon)
+  )::before {
+  left: 0;
+  width: 100%;
+  transform-origin: left center;
+}
+
+.info-card:has(.info-card__left-icon):not(
+    :has(.info-card__right-icon)
+  ):hover::before {
+  transform: scaleX(1);
+}
+
+/* only right icon: expand from right */
+.info-card:has(.info-card__right-icon):not(
+    :has(.info-card__left-icon)
+  )::before {
+  right: 0;
+  width: 100%;
+  transform-origin: right center;
+}
+
+.info-card:has(.info-card__right-icon):not(
+    :has(.info-card__left-icon)
+  ):hover::before {
+  transform: scaleX(1);
+}
+
+/* both icons: expand from edges to center */
+.info-card:has(.info-card__left-icon):has(.info-card__right-icon)::before,
+.info-card:has(.info-card__left-icon):has(.info-card__right-icon)::after {
+  width: 50%;
+  height: 100%;
+  transform: scaleX(0);
+}
+
+.info-card:has(.info-card__left-icon):has(.info-card__right-icon)::before {
+  left: 0;
+  transform-origin: left center;
+}
+
+.info-card:has(.info-card__left-icon):has(.info-card__right-icon)::after {
+  right: 0;
+  transform-origin: right center;
+}
+
+.info-card:has(.info-card__left-icon):has(.info-card__right-icon):hover::before,
+.info-card:has(.info-card__left-icon):has(.info-card__right-icon):hover::after {
+  transform: scaleX(1);
+}
+
+/* content area */
+.info-card__content {
+  padding: var(--spacing-lg, --spacing-md);
+  font-size: var(--font-size-lg);
+}
+
+/* icon wrapper */
+.info-card__icon-wrapper {
+  background-color: var(--color-primary-condensed);
+  padding: var(--spacing-lg, --spacing-md);
+}
+
+.info-card__icon-wrapper:has(.info-card__left-icon) {
+  border-top-left-radius: var(--spacing-sm);
+  border-bottom-left-radius: var(--spacing-sm);
+}
+
+.info-card__icon-wrapper:has(.info-card__right-icon) {
+  border-top-right-radius: var(--spacing-sm);
+  border-bottom-right-radius: var(--spacing-sm);
+}
