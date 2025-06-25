@@ -24,3 +24,10 @@
 .experience-card--right .experience-card__actions {
   justify-content: flex-start;
 }
+
+.experience-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}

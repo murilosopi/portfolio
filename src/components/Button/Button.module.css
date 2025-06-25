@@ -6,7 +6,7 @@
   font-weight: var(--font-weight-semibold);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-md);
-  padding: var(--spacing-xxs) var(--spacing-xl);
+  padding: var(--spacing-xxs) var(--spacing-lg);
   border-radius: var(--spacing-sm);
   box-shadow: 1px 1px 19px 8px rgb(0 0 0 / 15%);
   transition: var(--transition-dynamic);

@@ -3,6 +3,7 @@ import { Experience } from '@/types/experience';
 import styles from './ExperienceCard.module.css';
 import { Button } from '@/components/Button';
 import classNames from 'classnames';
+import { Icon } from '@/components/Icon';
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -31,7 +32,17 @@ export const ExperienceCard = ({
         <p className={styles['experience-card__description']}>{description}</p>
 
         <div className={styles['experience-card__actions']}>
-          <Button variant='light'>Details</Button>
+          <Button
+            variant='light'
+            className={styles['experience-card__button']}
+          >
+            Details
+            <Icon
+              type='arrowRight'
+              size='sm'
+              fill='dark'
+            />
+          </Button>
         </div>
       </div>
     </InfoCard>
