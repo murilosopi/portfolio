@@ -27,7 +27,7 @@ export const ExperienceTree = ({ experiences }: ExperienceTreeProps) => {
   return (
     <TreeList
       items={mapExperiencesToTreeItems(experiences)}
-      variant='primary'
+      variant='primary-condensed'
     />
   );
 };
