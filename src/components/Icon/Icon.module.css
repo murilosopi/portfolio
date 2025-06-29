@@ -1,5 +1,12 @@
 .icon {
   transition: color var(--transition-dynamic);
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button.icon {
+  cursor: pointer;
 }
 
 .icon--sm {

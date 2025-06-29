@@ -11,7 +11,8 @@ export type IconType =
   | 'twitch'
   | 'briefcase'
   | 'mortarboard'
-  | 'arrowRight';
+  | 'arrowRight'
+  | 'x';
 
 export type IconSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
@@ -22,7 +23,8 @@ const classNameMap: Record<IconType, string> = {
   github: 'bi bi-github',
   linkedin: 'bi bi-linkedin',
   twitch: 'bi bi-twitch',
-  arrowRight: 'bi bi-arrow-right'
+  arrowRight: 'bi bi-arrow-right',
+  x: 'bi bi-x'
 };
 
 type IconProps = {
@@ -30,6 +32,7 @@ type IconProps = {
   size?: IconSize;
   fill?: ColorVariant;
   hoverFill?: ColorVariant;
+  tag?: 'span' | 'i' | 'span' | 'button';
 } & React.HTMLAttributes<HTMLElement>;
 
 export const Icon = ({
@@ -38,6 +41,7 @@ export const Icon = ({
   className: classNameProp,
   fill = 'light',
   hoverFill = 'primary',
+  tag: Tag = 'span',
   ...props
 }: IconProps) => {
   const className = classNames(
@@ -50,7 +54,7 @@ export const Icon = ({
   );
 
   return (
-    <span
+    <Tag
       className={className}
       {...props}
     />
