@@ -1,5 +1,6 @@
 .container {
   padding: var(--spacing-md);
   width: 1440px;
+  min-height: 100%;
   margin: auto;
 }
