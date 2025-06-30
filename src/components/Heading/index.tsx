@@ -1,9 +1,13 @@
 import classNames from 'classnames';
 import styles from './Heading.module.css';
 import React, { JSX } from 'react';
+import { Icon, IconType } from '../Icon';
+import { If } from '../If';
 
 type HeadingProps = {
   as?: keyof JSX.IntrinsicElements;
+  leftIcon?: IconType;
+  rightIcon?: IconType;
   children: React.ReactNode;
   variant?: 'primary';
   className?: string;
@@ -12,6 +16,8 @@ type HeadingProps = {
 export const Heading = ({
   children,
   as: Tag = 'h2',
+  leftIcon,
+  rightIcon,
   variant,
   className: classNameProp = '',
   ...props
@@ -26,7 +32,15 @@ export const Heading = ({
       className={className}
       {...props}
     >
+      <If condition={!!leftIcon}>
+        <Icon type={leftIcon as IconType} />
+      </If>
+
       {children}
+
+      <If condition={!!rightIcon}>
+        <Icon type={rightIcon as IconType} />
+      </If>
     </Tag>
   );
 };

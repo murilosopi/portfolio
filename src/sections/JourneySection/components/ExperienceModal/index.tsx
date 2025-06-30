@@ -3,7 +3,8 @@ import { Container } from '@/components/Container';
 import { FullscreenModal } from '@/components/FullscreenModal';
 import { Heading } from '@/components/Heading';
 import { Icon } from '@/components/Icon';
-import { Experience } from '@/types/experience';
+import { EducationalExperience, Experience } from '@/types/experience';
+import { EducationalDetails } from '../EducationalDetails';
 
 interface ExperienceModalProps {
   isModalOpen: boolean;
@@ -16,23 +17,46 @@ export const ExperienceModal = ({
   setIsModalOpen,
   experience
 }: ExperienceModalProps) => {
-  return (
-    <FullscreenModal
-      open={isModalOpen}
-    >
-      <Container>
-        <header className={styles['experience-modal__header']}>
-          <Heading>Experience #{experience.id}</Heading>
-          <Icon
-            tag='button'
-            fill='light'
-            hoverFill='light'
-            type='x'
-            size='xl'
-            onClick={() => setIsModalOpen(false)}
+  const renderDetails = () => {
+    switch (experience.type) {
+      case 'education':
+        return (
+          <EducationalDetails
+            experience={experience as EducationalExperience}
           />
-        </header>
-        <p>{experience.description}</p>
+        );
+      case 'work':
+        return <></>;
+    }
+  };
+
+  return (
+    <FullscreenModal open={isModalOpen}>
+      <Container>
+        <article>
+          <header className={styles['experience-modal__header']}>
+            <Heading
+              as='h3'
+              variant='primary'
+              className={styles['experience-modal__title']}
+            >
+              {experience.title}
+            </Heading>
+            <Icon
+              tag='button'
+              title='Close'
+              fill='light'
+              hoverFill='light'
+              type='x'
+              size='xl'
+              onClick={() => setIsModalOpen(false)}
+            />
+          </header>
+
+          <div className={styles['experience-modal__details']}>
+            {renderDetails()}
+          </div>
+        </article>
       </Container>
     </FullscreenModal>
   );
