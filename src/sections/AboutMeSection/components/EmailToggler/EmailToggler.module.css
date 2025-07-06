@@ -1,6 +1,7 @@
 .email-icon__dialog {
   font-size: var(--font-size-lg);
   text-align: justify;
+  max-width: 480px;
 }
 
 .email-toggler__link {

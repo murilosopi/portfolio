@@ -19,6 +19,9 @@ export type IconType =
   | 'clipboard'
   | 'check'
   | 'send'
+  | 'company'
+  | 'person'
+  | 'type'
   | 'x';
 
 export type IconSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -38,7 +41,10 @@ const classNameMap: Record<IconType, string> = {
   instagram: 'bi bi-instagram',
   clipboard: 'bi bi-clipboard',
   check: 'bi bi-check',
-  send: 'bi bi-send'
+  send: 'bi bi-send',
+  company: 'bi bi-building',
+  person: 'bi bi-person',
+  type: 'bi bi-type'
 };
 
 type IconProps = {

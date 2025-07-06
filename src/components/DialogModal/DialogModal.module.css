@@ -2,7 +2,6 @@
   color: var(--color-light);
   background-color: var(--color-primary-darken);
   border-radius: var(--spacing-sm);
-  width: 820px;
   max-width: 100%;
   padding: var(--spacing-xl);
 }

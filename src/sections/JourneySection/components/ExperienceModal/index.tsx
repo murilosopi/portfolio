@@ -1,12 +1,17 @@
 import styles from './ExperienceModal.module.css';
 import { Container } from '@/components/Container';
-import { FullscreenModal } from '@/components/FullscreenModal';
+import { DialogModal } from '@/components/DialogModal';
 import { Heading } from '@/components/Heading';
 import { Icon } from '@/components/Icon';
-import { EducationalExperience, Experience } from '@/types/experience';
+import {
+  EducationalExperience,
+  Experience,
+  WorkExperience
+} from '@/types/experience';
 import { EducationalDetails } from '../EducationalDetails';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
+import { WorkDetails } from '../WorkDetails';
 
 interface ExperienceModalProps extends OptionalLanguage {
   isModalOpen: boolean;
@@ -30,7 +35,12 @@ export const ExperienceModal = ({
           />
         );
       case 'work':
-        return <></>;
+        return (
+          <WorkDetails
+            experience={experience as WorkExperience}
+            lang={lang}
+          />
+        );
     }
   };
 
@@ -39,7 +49,7 @@ export const ExperienceModal = ({
   };
 
   return (
-    <FullscreenModal
+    <DialogModal
       open={isModalOpen}
       onEsc={closeModal}
     >
@@ -69,6 +79,6 @@ export const ExperienceModal = ({
           </div>
         </article>
       </Container>
-    </FullscreenModal>
+    </DialogModal>
   );
 };

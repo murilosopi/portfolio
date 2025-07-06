@@ -18,8 +18,9 @@ interface EducationalContent {
 interface WorkContent {
   title: string;
   description: string;
+  insightsAndLearnings: string;
   company: string;
-  role?: string;
+  role: string;
 }
 
 export interface EducationalExperience extends ExperienceBase {

@@ -1,20 +1,19 @@
 import { Heading } from '@/components/Heading';
-import styles from './EducationalDetails.module.css';
-import { EducationalExperience } from '@/types/experience';
-import { If } from '@/components/If';
+import styles from './WorkDetails.module.css';
+import { WorkExperience } from '@/types/experience';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
 import { experiencesContent } from '@/dictionaries/experiences';
 
-export const EducationalDetails = ({
+export const WorkDetails = ({
   experience,
   lang = defaultLanguage
 }: {
-  experience: EducationalExperience;
+  experience: WorkExperience;
 } & OptionalLanguage) => {
   const { initialDate, finalDate, content } = experience;
 
-  const { insightsAndLearnings, period, institution } =
+  const { role, period, company, insightsAndLearnings, description } =
     experiencesContent[lang];
 
   const formattedInitialDate = initialDate.toLocaleDateString(lang, {
@@ -26,7 +25,19 @@ export const EducationalDetails = ({
     : period.now;
 
   return (
-    <ul className={styles['educational-details']}>
+    <ul className={styles['work-details']}>
+      {/* Description */}
+      <li>
+        <Heading
+          as='h4'
+          leftIcon={'type'}
+        >
+          {description.title}
+        </Heading>
+        {content.description}
+      </li>
+
+      {/* Insights and Learnings */}
       <li>
         <Heading
           as='h4'
@@ -36,6 +47,30 @@ export const EducationalDetails = ({
         </Heading>
         {content.insightsAndLearnings}
       </li>
+
+      {/* Company */}
+      <li>
+        <Heading
+          as='h4'
+          leftIcon={'company'}
+        >
+          {company.title}
+        </Heading>
+        <strong>{content.company}</strong>
+      </li>
+
+      {/* Role */}
+      <li>
+        <Heading
+          as='h4'
+          leftIcon={'person'}
+        >
+          {role.title}
+        </Heading>
+        {content.role}
+      </li>
+
+      {/* Period */}
       <li>
         <Heading
           as='h4'
@@ -46,18 +81,6 @@ export const EducationalDetails = ({
         {period.beforeInitialDate} <strong>{formattedInitialDate}</strong>
         {period.beforeFinalDate} <strong>{formattedFinalDate}</strong>
       </li>
-
-      <If condition={!!content.institution}>
-        <li>
-          <Heading
-            as='h4'
-            leftIcon={'book'}
-          >
-            {institution.title}
-          </Heading>
-          <strong>{content.institution}</strong>
-        </li>
-      </If>
     </ul>
   );
 };

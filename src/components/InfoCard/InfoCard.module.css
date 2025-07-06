@@ -88,6 +88,9 @@
 
 /* icon wrapper */
 .info-card__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-primary-condensed);
   padding: var(--spacing-lg, --spacing-md);
 }

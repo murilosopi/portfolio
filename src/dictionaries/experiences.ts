@@ -5,11 +5,21 @@ interface ExperienceContent {
     title: string;
   };
   period: {
-    template: string;
+    beforeInitialDate: string;
+    beforeFinalDate: string;
     now: string;
     title: string;
   };
   institution: {
+    title: string;
+  };
+  company: {
+    title: string;
+  };
+  role: {
+    title: string;
+  };
+  description: {
     title: string;
   };
 }
@@ -20,12 +30,22 @@ export const experiencesContent: Record<Language, ExperienceContent> = {
       title: 'Insights and Learnings'
     },
     period: {
-      template: 'From {{f}} until {{u}}',
+      beforeInitialDate: 'From ',
+      beforeFinalDate: ' until ',
       now: 'now',
       title: 'Period'
     },
     institution: {
       title: 'Institution'
+    },
+    company: {
+      title: 'Company'
+    },
+    role: {
+      title: 'Role'
+    },
+    description: {
+      title: 'Description'
     }
   },
   pt: {
@@ -33,12 +53,22 @@ export const experiencesContent: Record<Language, ExperienceContent> = {
       title: 'Insights e Aprendizados'
     },
     period: {
-      template: 'De {{f}} até {{u}}',
+      beforeInitialDate: 'De ',
+      beforeFinalDate: ' até ',
       now: 'o momento',
       title: 'Período'
     },
     institution: {
       title: 'Instituição'
+    },
+    company: {
+      title: 'Empresa'
+    },
+    role: {
+      title: 'Cargo'
+    },
+    description: {
+      title: 'Descrição'
     }
   }
 };
