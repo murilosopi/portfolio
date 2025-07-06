@@ -2,12 +2,35 @@ import { Heading } from '@/components/Heading';
 import styles from './EducationalDetails.module.css';
 import { EducationalExperience } from '@/types/experience';
 import { If } from '@/components/If';
+import { OptionalLanguage } from '@/types/language';
+import { defaultLanguage } from '@/data/languages';
+import { experiencesContent } from '@/dictionaries/experiences';
 
 export const EducationalDetails = ({
-  experience
+  experience,
+  lang = defaultLanguage
 }: {
   experience: EducationalExperience;
-}) => {
+} & OptionalLanguage) => {
+  const { initialDate, finalDate, content } = experience;
+
+  const { insightsAndLearnings, period, institution } =
+    experiencesContent[lang];
+
+  const renderPeriod = () => {
+    return period.template
+      .replace(
+        '{{f}}',
+        `<strong>${initialDate.toLocaleDateString(lang, { dateStyle: 'long' })}</strong>`
+      )
+      .replace(
+        '{{u}}',
+        finalDate
+          ? `<strong>${finalDate.toLocaleDateString(lang, { dateStyle: 'long' })}</strong>`
+          : `<strong>${period.now}</strong>`
+      );
+  };
+
   return (
     <ul className={styles['educational-details']}>
       <li>
@@ -15,40 +38,29 @@ export const EducationalDetails = ({
           as='h4'
           leftIcon={'lightbulb'}
         >
-          Insights and Learnings
+          {insightsAndLearnings.title}
         </Heading>
-        {experience.insightsAndLearnings}
+        {content.insightsAndLearnings}
       </li>
       <li>
         <Heading
           as='h4'
           leftIcon={'calendarRange'}
         >
-          Period
+          {period.title}
         </Heading>
-        From{' '}
-        <strong>
-          {experience.initialDate.toLocaleString('en', {
-            dateStyle: 'long'
-          })}
-        </strong>{' '}
-        until{' '}
-        <strong>
-          {experience.finalDate?.toLocaleString('en', {
-            dateStyle: 'long'
-          }) || 'now'}
-        </strong>
+        <span dangerouslySetInnerHTML={{ __html: renderPeriod() }} />
       </li>
 
-      <If condition={!!experience.institution}>
+      <If condition={!!content.institution}>
         <li>
           <Heading
             as='h4'
             leftIcon={'book'}
           >
-            Institution
+            {institution.title}
           </Heading>
-          At <strong>{experience.institution}</strong>
+          <strong>{content.institution}</strong>
         </li>
       </If>
     </ul>

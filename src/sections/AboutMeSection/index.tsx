@@ -1,34 +1,32 @@
-import Image from 'next/image';
-
 import styles from './AboutMeSection.module.css';
 import { Icon } from '../../components/Icon';
 import { SectionTitle } from '../../components/SectionTitle';
+import { defaultLanguage } from '@/data/languages';
+import { aboutMeContent } from '@/dictionaries/aboutMe';
+import { OptionalLanguage } from '@/types/language';
 
-export const AboutMeSection = () => {
+export const AboutMeSection = ({
+  lang = defaultLanguage
+}: OptionalLanguage) => {
+  const dictionary = aboutMeContent[lang];
+
   return (
     <section className={styles['about-me-section']}>
       <article className={styles['about-me-section__lead']}>
         <SectionTitle
-          prelude={
-            <>
-              {"Hello! I'am "}
-              <strong>Murilo Sopi</strong>,
-            </>
-          }
-          heading='Software Developer'
+          prelude={dictionary.prelude}
+          heading={dictionary.heading}
         />
 
         <p className={styles['about-me-section__lead-text']}>
-          {
-            "A text to inspire the public. Wow. That's a really amazing phrase..."
-          }
+          {dictionary.lead}
         </p>
       </article>
       <figure className={styles['about-me-section__avatar-wrapper']}>
-        <Image
+        <img
           className={styles['about-me-section__avatar']}
-          src={'/images/avatar.jpg'}
-          alt='a man with black, long and curly hair'
+          src={dictionary.avatar.src}
+          alt={dictionary.avatar.alt}
           width={410}
           height={410}
         />

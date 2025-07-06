@@ -1,23 +1,25 @@
-import { AboutMeSection } from '@/sections/AboutMeSection';
-import { JourneySection } from '@/sections/JourneySection';
-import { Container } from '@/components/Container';
-import { GradientSection } from '@/components/GradientSection';
-import { GradientVariants } from '@/constants/colors';
+'use client';
 
-export default function Home() {
-  return (
-    <main>
-      <GradientSection variant={GradientVariants.DarkToPrimaryDarken}>
-        <Container>
-          <AboutMeSection />
-        </Container>
-      </GradientSection>
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { defaultLanguage, languages } from '@/data/languages';
+import { Language } from '@/types/language';
 
-      <GradientSection variant={GradientVariants.PrimaryDarkenToDark}>
-        <Container>
-          <JourneySection />
-        </Container>
-      </GradientSection>
-    </main>
-  );
+export default function RedirectPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const current = window.location.pathname;
+    const supported = languages;
+
+    if (supported.some((lang) => current.startsWith(`/${lang}`))) return;
+
+    const lang =
+      (navigator.language?.split('-')[0] as Language) || defaultLanguage;
+    const target = supported.includes(lang) ? lang : defaultLanguage;
+
+    router.replace('/' + target);
+  }, [router]);
+
+  return null;
 }

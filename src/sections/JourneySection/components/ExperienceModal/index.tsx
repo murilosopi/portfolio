@@ -5,8 +5,10 @@ import { Heading } from '@/components/Heading';
 import { Icon } from '@/components/Icon';
 import { EducationalExperience, Experience } from '@/types/experience';
 import { EducationalDetails } from '../EducationalDetails';
+import { OptionalLanguage } from '@/types/language';
+import { defaultLanguage } from '@/data/languages';
 
-interface ExperienceModalProps {
+interface ExperienceModalProps extends OptionalLanguage {
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   experience: Experience;
@@ -15,7 +17,8 @@ interface ExperienceModalProps {
 export const ExperienceModal = ({
   isModalOpen,
   setIsModalOpen,
-  experience
+  experience,
+  lang = defaultLanguage
 }: ExperienceModalProps) => {
   const renderDetails = () => {
     switch (experience.type) {
@@ -23,6 +26,7 @@ export const ExperienceModal = ({
         return (
           <EducationalDetails
             experience={experience as EducationalExperience}
+            lang={lang}
           />
         );
       case 'work':
@@ -40,7 +44,7 @@ export const ExperienceModal = ({
               variant='primary'
               className={styles['experience-modal__title']}
             >
-              {experience.title}
+              {experience.content.title}
             </Heading>
             <Icon
               tag='button'

@@ -7,17 +7,21 @@ import classNames from 'classnames';
 import { Icon } from '@/components/Icon';
 import { useState } from 'react';
 import { ExperienceModal } from '../ExperienceModal';
+import { OptionalLanguage } from '@/types/language';
+import { defaultLanguage } from '@/data/languages';
+import { experiencesActionsContent } from '@/dictionaries/experiences';
 
-interface ExperienceCardProps {
+interface ExperienceCardProps extends OptionalLanguage {
   experience: Experience;
   side?: 'left' | 'right';
 }
 
 export const ExperienceCard = ({
   experience,
-  side = 'left'
+  side = 'left',
+  lang = defaultLanguage
 }: ExperienceCardProps) => {
-  const { type, description } = experience;
+  const { type, content } = experience;
 
   const iconSide = side === 'left' ? 'right' : 'left';
 
@@ -26,6 +30,8 @@ export const ExperienceCard = ({
   };
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const action = experiencesActionsContent[lang];
 
   return (
     <>
@@ -38,7 +44,7 @@ export const ExperienceCard = ({
       >
         <div className={styles['experience-card__content']}>
           <p className={styles['experience-card__description']}>
-            {description}
+            {content.description}
           </p>
 
           <div className={styles['experience-card__actions']}>
@@ -47,7 +53,7 @@ export const ExperienceCard = ({
               className={styles['experience-card__button']}
               onClick={() => setIsModalOpen(true)}
             >
-              Details
+              {action}
               <Icon
                 type='arrowRight'
                 size='sm'
@@ -62,6 +68,7 @@ export const ExperienceCard = ({
         experience={experience}
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
+        lang={lang}
       />
     </>
   );

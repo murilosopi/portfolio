@@ -1,16 +1,35 @@
-export interface Experience {
+export type ExperienceType = 'education' | 'work';
+
+export interface ExperienceBase {
   id: string;
-  type: 'education' | 'work';
-  title: string;
-  description: string;
+  type: ExperienceType;
   initialDate: Date;
   finalDate?: Date;
-  tags?: string[];
+  content: EducationalContent | WorkContent;
 }
 
-export interface EducationalExperience extends Omit<Experience, 'type'> {
-  type: 'education';
-  institution: string;
+interface EducationalContent {
+  title: string;
+  description: string;
+  institution?: string;
   insightsAndLearnings?: string;
-  certificateUrl?: string;
 }
+
+interface WorkContent {
+  title: string;
+  description: string;
+  company: string;
+  role?: string;
+}
+
+export interface EducationalExperience extends ExperienceBase {
+  type: 'education';
+  content: EducationalContent;
+}
+
+export interface WorkExperience extends ExperienceBase {
+  type: 'work';
+  content: WorkContent;
+}
+
+export type Experience = EducationalExperience | WorkExperience;
