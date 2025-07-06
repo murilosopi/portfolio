@@ -24,4 +24,4 @@ export const socialNetworks: SocialNewtwork[] = [
   }
 ];
 
-export const emailAddress = 'dev.murilosopi@gmail.com'
+export const emailAddress = 'dev.murilosopi@gmail.com';

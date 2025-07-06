@@ -7,7 +7,10 @@ export interface ExperienceTreeProps extends OptionalLanguage {
   experiences: Experience[];
 }
 
-export const ExperienceTree = ({ experiences, lang = defaultLanguage }: ExperienceTreeProps) => {
+export const ExperienceTree = ({
+  experiences,
+  lang = defaultLanguage
+}: ExperienceTreeProps) => {
   const mapExperiencesToTreeItems = (experiences: Experience[]): TreeItem[] => {
     return experiences.map((experience) => {
       const side = experience.type === 'education' ? 'right' : 'left';

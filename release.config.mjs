@@ -19,8 +19,7 @@ export default {
           { type: 'revert', release: 'patch' },
           { type: 'test', release: 'patch' },
           { type: 'refactor', release: 'patch' },
-          { type: 'style', release: 'patch' },
-          { type: 'chore', release: 'patch' }
+          { type: 'style', release: 'patch' }
         ]
       }
     ],
