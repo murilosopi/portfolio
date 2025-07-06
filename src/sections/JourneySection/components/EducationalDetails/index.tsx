@@ -4,7 +4,7 @@ import { EducationalExperience } from '@/types/experience';
 import { If } from '@/components/If';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
-import { experiencesContent } from '@/dictionaries/experiences';
+import { experiencesContent } from '@/contents/experiences';
 
 export const EducationalDetails = ({
   experience,

@@ -3,7 +3,7 @@ import styles from './WorkDetails.module.css';
 import { WorkExperience } from '@/types/experience';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
-import { experiencesContent } from '@/dictionaries/experiences';
+import { experiencesContent } from '@/contents/experiences';
 
 export const WorkDetails = ({
   experience,

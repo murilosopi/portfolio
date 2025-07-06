@@ -10,7 +10,7 @@ import styles from './EmailToggler.module.css';
 import { ColorVariant } from '@/constants/colors';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
-import { aboutMeContent } from '@/dictionaries/aboutMe';
+import { aboutMeContent } from '@/contents/aboutMe';
 
 interface EmailTogglerProps extends OptionalLanguage {
   email: string;

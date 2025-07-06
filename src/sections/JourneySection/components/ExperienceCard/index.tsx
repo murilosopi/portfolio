@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { ExperienceModal } from '../ExperienceModal';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
-import { experiencesActionsContent } from '@/dictionaries/experiences';
+import { experiencesActionsContent } from '@/contents/experiences';
 
 interface ExperienceCardProps extends OptionalLanguage {
   experience: Experience;

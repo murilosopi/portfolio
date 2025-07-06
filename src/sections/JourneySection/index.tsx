@@ -2,7 +2,7 @@ import { SectionTitle } from '../../components/SectionTitle';
 import { ExperienceTree } from './components/ExperienceTree';
 import { sortExperiences } from '@/utils/experiences';
 import { defaultLanguage } from '@/data/languages';
-import { journeyContent } from '@/dictionaries/journey';
+import { journeyContent } from '@/contents/journey';
 import { OptionalLanguage } from '@/types/language';
 
 export const JourneySection = ({

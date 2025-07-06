@@ -2,7 +2,7 @@ import styles from './AboutMeSection.module.css';
 import { Icon } from '../../components/Icon';
 import { SectionTitle } from '../../components/SectionTitle';
 import { defaultLanguage } from '@/data/languages';
-import { aboutMeContent } from '@/dictionaries/aboutMe';
+import { aboutMeContent } from '@/contents/aboutMe';
 import { OptionalLanguage } from '@/types/language';
 import { emailAddress, socialNetworks } from '@/data/social';
 import { EmailToggler } from './components/EmailToggler';
