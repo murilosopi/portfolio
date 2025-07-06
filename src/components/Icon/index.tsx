@@ -12,6 +12,9 @@ export type IconType =
   | 'briefcase'
   | 'mortarboard'
   | 'arrowRight'
+  | 'lightbulb'
+  | 'calendarRange'
+  | 'book'
   | 'x';
 
 export type IconSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -24,7 +27,10 @@ const classNameMap: Record<IconType, string> = {
   linkedin: 'bi bi-linkedin',
   twitch: 'bi bi-twitch',
   arrowRight: 'bi bi-arrow-right',
-  x: 'bi bi-x'
+  x: 'bi bi-x',
+  lightbulb: 'bi bi-lightbulb',
+  calendarRange: 'bi bi-calendar-range',
+  book: 'bi bi-book'
 };
 
 type IconProps = {

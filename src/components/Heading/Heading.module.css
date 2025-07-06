@@ -1,4 +1,6 @@
 .heading {
+  display: flex;
+  gap: var(--spacing-sm);
   font-family: var(--font-fira-sans);
   font-weight: var(--font-weight-extrabold);
 }
