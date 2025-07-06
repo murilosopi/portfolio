@@ -4,6 +4,8 @@ import { SectionTitle } from '../../components/SectionTitle';
 import { defaultLanguage } from '@/data/languages';
 import { aboutMeContent } from '@/dictionaries/aboutMe';
 import { OptionalLanguage } from '@/types/language';
+import { emailAddress, socialNetworks } from '@/data/social';
+import { EmailToggler } from './components/EmailToggler';
 
 export const AboutMeSection = ({
   lang = defaultLanguage
@@ -33,25 +35,20 @@ export const AboutMeSection = ({
       </figure>
 
       <nav className={styles['about-me-section__nav']}>
-        <Icon
-          type='github'
-          size='xl'
-          title='Github'
-        />
-        <Icon
-          type='linkedin'
-          size='xl'
-          title='LinkedIn'
-        />
-        <Icon
-          type='twitch'
-          size='xl'
-          title='Twitch'
-        />
-        <Icon
-          type='envelope'
-          size='xl'
-          title='E-mail'
+        {socialNetworks.map((network) => (
+          <Icon
+            key={network.type}
+            tag='a'
+            type={network.icon}
+            size='xl'
+            title={network.title}
+            href={network.url}
+            target='_blank'
+          />
+        ))}
+        <EmailToggler
+          email={emailAddress}
+          lang={lang}
         />
       </nav>
     </section>

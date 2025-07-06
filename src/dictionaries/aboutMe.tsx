@@ -11,6 +11,18 @@ interface AboutMeContent {
     width: number;
     height: number;
   };
+  emailDialog: {
+    text: {
+      beforeEmail?: string;
+      afterEmail?: string;
+    };
+    subtext: string;
+    closeButton: string;
+    clipboardButton: {
+      text: string;
+      copiedText: string;
+    };
+  };
 }
 
 export const aboutMeContent: Record<Language, AboutMeContent> = {
@@ -27,6 +39,19 @@ export const aboutMeContent: Record<Language, AboutMeContent> = {
       alt: 'a man with black, long and curly hair, wearing a black jacket and a black t-shirt, smiling at the camera',
       width: 410,
       height: 410
+    },
+    emailDialog: {
+      text: {
+        beforeEmail: 'You can contact me via e-mail at ',
+        afterEmail: ' to questions, suggestions, or just to say hi!'
+      },
+      subtext:
+        'If you prefer, you can also copy the e-mail address to your clipboard by clicking the button below.',
+      closeButton: 'Close',
+      clipboardButton: {
+        text: 'Copy e-mail',
+        copiedText: 'E-mail copied'
+      }
     }
   },
   pt: {
@@ -42,6 +67,19 @@ export const aboutMeContent: Record<Language, AboutMeContent> = {
       alt: 'um homem com cabelo preto, longo e cacheado, vestindo uma jaqueta preta e uma camiseta preta, sorrindo para a câmera',
       width: 410,
       height: 410
+    },
+    emailDialog: {
+      text: {
+        beforeEmail: 'Você pode entrar em contato comigo por e-mail em ',
+        afterEmail: ' para perguntas, sugestões ou apenas para falar um oi!'
+      },
+      subtext:
+        'Se preferir, você também pode copiar o endereço de e-mail para a área de transferência clicando no botão abaixo.',
+      closeButton: 'Fechar',
+      clipboardButton: {
+        text: 'Copiar e-mail',
+        copiedText: 'E-mail copiado'
+      }
     }
   }
 };

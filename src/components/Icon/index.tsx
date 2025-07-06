@@ -15,6 +15,10 @@ export type IconType =
   | 'lightbulb'
   | 'calendarRange'
   | 'book'
+  | 'instagram'
+  | 'clipboard'
+  | 'check'
+  | 'send'
   | 'x';
 
 export type IconSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -30,7 +34,11 @@ const classNameMap: Record<IconType, string> = {
   x: 'bi bi-x',
   lightbulb: 'bi bi-lightbulb',
   calendarRange: 'bi bi-calendar-range',
-  book: 'bi bi-book'
+  book: 'bi bi-book',
+  instagram: 'bi bi-instagram',
+  clipboard: 'bi bi-clipboard',
+  check: 'bi bi-check',
+  send: 'bi bi-send'
 };
 
 type IconProps = {
@@ -38,8 +46,9 @@ type IconProps = {
   size?: IconSize;
   fill?: ColorVariant;
   hoverFill?: ColorVariant;
-  tag?: 'span' | 'i' | 'span' | 'button';
-} & React.HTMLAttributes<HTMLElement>;
+  tag?: 'span' | 'i' | 'span' | 'button' | 'a';
+} & React.HTMLAttributes<HTMLElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Icon = ({
   type,

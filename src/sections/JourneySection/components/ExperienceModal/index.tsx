@@ -34,8 +34,15 @@ export const ExperienceModal = ({
     }
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <FullscreenModal open={isModalOpen}>
+    <FullscreenModal
+      open={isModalOpen}
+      onEsc={closeModal}
+    >
       <Container>
         <article>
           <header className={styles['experience-modal__header']}>
@@ -53,7 +60,7 @@ export const ExperienceModal = ({
               hoverFill='light'
               type='x'
               size='xl'
-              onClick={() => setIsModalOpen(false)}
+              onClick={closeModal}
             />
           </header>
 
