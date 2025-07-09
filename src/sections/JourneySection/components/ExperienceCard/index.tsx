@@ -1,7 +1,7 @@
 'use client';
 import { InfoCard } from '@/components/InfoCard';
 import { Experience } from '@/types/experience';
-import styles from './ExperienceCard.module.css';
+import styles from './ExperienceCard.module.scss';
 import { Button } from '@/components/Button';
 import classNames from 'classnames';
 import { Icon } from '@/components/Icon';

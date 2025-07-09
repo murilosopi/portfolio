@@ -9,7 +9,7 @@ interface DialogModalProps {
   children: React.ReactNode;
 }
 
-import styles from './DialogModal.module.css';
+import styles from './DialogModal.module.scss';
 
 export const DialogModal = ({ children, ...props }: DialogModalProps) => {
   return (

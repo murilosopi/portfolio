@@ -1,6 +1,6 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import styles from './Icon.module.css';
+import styles from './Icon.module.scss';
 import classNames from 'classnames';
 import { ColorVariant } from '@/constants/colors';
 

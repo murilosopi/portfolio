@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from './Heading.module.css';
+import styles from './Heading.module.scss';
 import React, { JSX } from 'react';
 import { Icon, IconType } from '../Icon';
 import { If } from '../If';

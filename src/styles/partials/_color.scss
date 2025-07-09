@@ -12,21 +12,19 @@ $variants: (
   light: $light
 );
 
-$vertical-gradient-primary-darken-to-dark: linear-gradient(
-  to bottom,
-  $primary-darken 70%,
-  $dark
+$neutral-overlay-variants: (
+  primary: $light,
+  primary-condensed: $light,
+  primary-darken: $light,
+  dark: $light,
+  light: $dark
 );
 
-$vertical-gradient-dark-to-primary-darken: linear-gradient(
-  to bottom,
-  $dark 70%,
-  $primary-darken
-);
-
-$gradients: (
-  vertical-gradient-primary-darken-to-dark:
-    $vertical-gradient-primary-darken-to-dark,
-  vertical-gradient-dark-to-primary-darken:
-    $vertical-gradient-dark-to-primary-darken
-);
+@function neutral-overlay($color) {
+  @if map-has-key($neutral-overlay-variants, $color) {
+    @return map-get($neutral-overlay-variants, $color);
+  } @else {
+    @warn "neutral overlay color '#{$color}' not found";
+    @return null;
+  }
+}

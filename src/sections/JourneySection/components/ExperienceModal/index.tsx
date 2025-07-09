@@ -1,4 +1,4 @@
-import styles from './ExperienceModal.module.css';
+import styles from './ExperienceModal.module.scss';
 import { Container } from '@/components/Container';
 import { DialogModal } from '@/components/DialogModal';
 import { Heading } from '@/components/Heading';

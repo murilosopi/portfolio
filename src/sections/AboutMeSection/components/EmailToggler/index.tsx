@@ -6,7 +6,7 @@ import { Icon } from '@/components/Icon';
 import { If } from '@/components/If';
 import { useEffect, useState } from 'react';
 
-import styles from './EmailToggler.module.css';
+import styles from './EmailToggler.module.scss';
 import { ColorVariant } from '@/constants/colors';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
@@ -70,7 +70,7 @@ export const EmailToggler = ({
         onEsc={closeModal}
         onBgClick={closeModal}
       >
-        <article className={styles['email-icon__dialog']}>
+        <article className={styles['email-toggler__dialog']}>
           <p>
             {content.text?.beforeEmail}
             <a
@@ -92,7 +92,7 @@ export const EmailToggler = ({
             <small>{content.subtext}</small>
           </p>
 
-          <div className={styles['email-icon__dialog-actions']}>
+          <div className={styles['email-toggler__dialog-actions']}>
             <Button
               variant='light'
               onClick={closeModal}

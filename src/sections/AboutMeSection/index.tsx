@@ -1,4 +1,4 @@
-import styles from './AboutMeSection.module.css';
+import styles from './AboutMeSection.module.scss';
 import { Icon } from '../../components/Icon';
 import { SectionTitle } from '../../components/SectionTitle';
 import { defaultLanguage } from '@/data/languages';

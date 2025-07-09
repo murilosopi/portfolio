@@ -1,0 +1,17 @@
+@use './transitions' as tr;
+
+/* applies expansion animation from one side (e.g., left, right) */
+@mixin expansion-from-side($side: left, $duration: 0.4s, $easing: ease) {
+  transform: scaleX(0);
+  transform-origin: #{$side} center;
+  transition: transform #{$duration} #{$easing};
+}
+
+/* applies expansion animation from edges (used in left/right symmetry) */
+@mixin expansion-from-edges($side: left, $duration: 0.4s, $easing: ease) {
+  width: 50%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: #{$side} center;
+  transition: transform #{$duration} #{$easing};
+}

@@ -1,0 +1,16 @@
+@use '@/styles/partials/spacing' as s;
+@use '@/styles/partials/typography' as t;
+@use '@/styles/partials/color' as c;
+
+.heading {
+  display: flex;
+  gap: s.$spacing-sm;
+  font-family: t.$font-family-heading;
+  font-weight: t.$font-weight-extrabold;
+
+  @each $color, $value in c.$variants {
+    &--#{$color} {
+      color: $value;
+    }
+  }
+}

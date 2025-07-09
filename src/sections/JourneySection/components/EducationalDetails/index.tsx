@@ -1,5 +1,5 @@
 import { Heading } from '@/components/Heading';
-import styles from './EducationalDetails.module.css';
+import styles from './EducationalDetails.module.scss';
 import { EducationalExperience } from '@/types/experience';
 import { If } from '@/components/If';
 import { OptionalLanguage } from '@/types/language';

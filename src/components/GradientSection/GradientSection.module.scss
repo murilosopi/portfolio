@@ -1,0 +1,22 @@
+@use '@/styles/partials/color' as c;
+
+.gradient-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  @each $initialColor, $initialValue in c.$variants {
+    @each $finalColor, $finalValue in c.$variants {
+      @if $initialColor != $finalColor {
+        &--#{$initialColor}-to-#{$finalColor} {
+          background-image: linear-gradient(
+            to bottom,
+            $initialValue 70%,
+            $finalValue
+          );
+        }
+      }
+    }
+  }
+}

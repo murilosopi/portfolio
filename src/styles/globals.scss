@@ -27,11 +27,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@each $size, $value in t.$font-sizes-heading {
-  h#{$size} {
-    font-family: var(--font-family-heading);
-    line-height: var(--line-height-tight);
-    font-weight: var(--font-weight-bold);
+@each $heading, $value in t.$font-sizes-heading {
+  #{$heading} {
+    font-family: t.$font-family-heading;
+    line-height: t.$line-height-tight;
+    font-weight: t.$font-weight-bold;
     color: c.$light;
     margin-top: 1rem;
     margin-bottom: 0.75rem;

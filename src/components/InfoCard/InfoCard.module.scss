@@ -1,0 +1,92 @@
+@use '@/styles/partials/color' as c;
+@use '@/styles/partials/spacing' as s;
+@use '@/styles/partials/typography' as t;
+@use '@/styles/partials/transitions' as tr;
+@use '@/styles/partials/animations' as anim;
+
+.info-card {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: s.$spacing-sm;
+  background-color: c.$primary;
+  transition: background-color tr.$transition-dynamic;
+
+  &:not(:has(.info-card__left-icon, .info-card__right-icon)):hover {
+    background-color: c.$primary-condensed;
+  }
+
+  // pseudo-elements are defined by you now
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: c.$primary-condensed;
+  }
+
+  // left icon only
+  &:has(.info-card__left-icon):not(:has(.info-card__right-icon))::before {
+    left: 0;
+    width: 100%;
+    @include anim.expansion-from-side(left);
+  }
+
+  &:has(.info-card__left-icon):not(:has(.info-card__right-icon)):hover::before {
+    transform: scaleX(1);
+  }
+
+  // right icon only
+  &:has(.info-card__right-icon):not(:has(.info-card__left-icon))::before {
+    right: 0;
+    width: 100%;
+    @include anim.expansion-from-side(right);
+  }
+
+  &:has(.info-card__right-icon):not(:has(.info-card__left-icon)):hover::before {
+    transform: scaleX(1);
+  }
+
+  // both icons
+  &:has(.info-card__left-icon):has(.info-card__right-icon)::before,
+  &:has(.info-card__left-icon):has(.info-card__right-icon)::after {
+    @include anim.expansion-from-edges(left); // before
+  }
+
+  &:has(.info-card__left-icon):has(.info-card__right-icon)::after {
+    right: 0;
+    @include anim.expansion-from-edges(right);
+  }
+
+  &:has(.info-card__left-icon):has(.info-card__right-icon):hover::before,
+  &:has(.info-card__left-icon):has(.info-card__right-icon):hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.info-card__content {
+  flex-grow: 1;
+  padding: s.$spacing-lg;
+  font-size: t.$font-size-lg;
+}
+
+.info-card__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: c.$primary-condensed;
+  padding: s.$spacing-lg;
+
+  &:has(.info-card__left-icon) {
+    border-top-left-radius: s.$spacing-sm;
+    border-bottom-left-radius: s.$spacing-sm;
+  }
+
+  &:has(.info-card__right-icon) {
+    border-top-right-radius: s.$spacing-sm;
+    border-bottom-right-radius: s.$spacing-sm;
+  }
+}

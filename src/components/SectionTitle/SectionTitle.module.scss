@@ -1,0 +1,9 @@
+@use '@/styles/partials/typography' as t;
+
+.section-title {
+  &__prelude,
+  &__postlude {
+    font-size: t.$font-size-xxl;
+    color: #fff;
+  }
+}

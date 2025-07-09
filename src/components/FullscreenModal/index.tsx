@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import styles from './FullscreenModal.module.css';
+import styles from './FullscreenModal.module.scss';
 import { If } from '../If';
 import { useDisableScroll } from '@/hooks/useDisableScroll';
 

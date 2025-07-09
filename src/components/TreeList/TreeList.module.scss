@@ -1,0 +1,99 @@
+@use '@/styles/partials/color' as c;
+@use '@/styles/partials/spacing' as s;
+
+$trunk-width: s.$spacing-xs;
+
+@mixin tree-colors($color-tree) {
+  .tree-list__trunk,
+  .tree-list__trunk::before,
+  .tree-list__trunk::after,
+  .tree-list__item::before {
+    background-color: $color-tree;
+  }
+}
+
+.tree-list__wrapper {
+  position: relative;
+}
+
+@each $color, $value in c.$variants {
+  .tree-list__wrapper--#{$color} {
+    @include tree-colors($value);
+  }
+}
+
+/* tree list structure */
+.tree-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: s.$spacing-lg;
+  padding: s.$spacing-xxxl 0;
+
+  /* vertical trunk */
+  &__trunk {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: $trunk-width;
+    height: 100%;
+    border-radius: s.$spacing-sm;
+    transform: translateX(-50%);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 50%;
+      width: calc(#{$trunk-width} * 3);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  /* tree items */
+  &__item {
+    position: relative;
+    display: flex;
+    width: 40%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 25%;
+      height: $trunk-width;
+      z-index: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &[data-side='left'] {
+      margin-right: auto;
+      justify-content: flex-end;
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &[data-side='right'] {
+      margin-left: auto;
+      justify-content: flex-start;
+
+      &::before {
+        right: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use '@/styles/partials/spacing' as s;
+@use '@/styles/partials/color' as c;
+@use '@/styles/partials/typography' as t;
+@use '@/styles/partials/transitions' as tr;
+
+.email-toggler {
+  &__link {
+    display: inline-flex;
+    gap: s.$spacing-sm;
+    color: c.$light;
+    text-decoration: none;
+    font-weight: t.$font-weight-bold;
+    transition: tr.$transition-dynamic;
+    text-wrap-mode: nowrap;
+  }
+
+  &__link:hover {
+    color: c.$primary;
+  }
+
+  &__dialog {
+    font-size: t.$font-size-lg;
+    text-align: justify;
+    max-width: 480px;
+  }
+
+  &__dialog-actions {
+    max-width: 428px;
+    margin: auto;
+    margin-top: s.$spacing-lg;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: s.$spacing-lg;
+  }
+}

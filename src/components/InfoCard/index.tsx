@@ -11,7 +11,7 @@ type InfoCardProps = {
   variant?: ColorVariant;
 } & React.HTMLAttributes<HTMLElement>;
 
-import styles from './InfoCard.module.css';
+import styles from './InfoCard.module.scss';
 import classNames from 'classnames';
 
 export const InfoCard = ({

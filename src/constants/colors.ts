@@ -7,8 +7,3 @@ export enum ColorVariants {
 }
 
 export type ColorVariant = `${ColorVariants}`;
-
-export enum GradientVariants {
-  PrimaryDarkenToDark = 'primary-darken-to-dark',
-  DarkToPrimaryDarken = 'dark-to-primary-darken'
-}

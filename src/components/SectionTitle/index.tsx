@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SectionTitle.module.css';
+import styles from './SectionTitle.module.scss';
 import { Heading } from '../Heading';
 
 interface SectionTitleProps {
@@ -14,7 +14,7 @@ export const SectionTitle = ({
   postlude
 }: SectionTitleProps) => {
   return (
-    <div>
+    <div className={styles['section-title']}>
       {prelude && <p className={styles['section-title__prelude']}>{prelude}</p>}
 
       <Heading

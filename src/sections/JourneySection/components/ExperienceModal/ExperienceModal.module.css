@@ -1,9 +1,0 @@
-.experience-modal__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.experience-modal__title {
-  font-size: var(--font-size-h2);
-}

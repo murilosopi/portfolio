@@ -1,0 +1,46 @@
+@use '@/styles/partials/spacing' as s;
+@use '@/styles/partials/typography' as t;
+
+.about-me-section {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    'lead avatar'
+    'lead nav';
+  row-gap: s.$spacing-xl;
+  column-gap: s.$spacing-xxxl;
+  margin: auto;
+
+  &__lead {
+    grid-area: lead;
+  }
+
+  &__avatar-wrapper {
+    grid-area: avatar;
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: flex;
+    gap: s.$spacing-lg;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__avatar {
+    transition: 0.2s;
+    border-radius: 140px;
+    width: 410px;
+    aspect-ratio: 1/1;
+    filter: grayscale(1);
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+
+  &__lead-text {
+    font-size: t.$font-size-xxl;
+  }
+}

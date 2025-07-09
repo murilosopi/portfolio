@@ -12,7 +12,7 @@ export interface TreeItem {
 }
 
 import { ColorVariant } from '@/constants/colors';
-import styles from './TreeList.module.css';
+import styles from './TreeList.module.scss';
 import classNames from 'classnames';
 
 export const TreeList = ({ items = [], variant = 'light' }: TreeProps) => {

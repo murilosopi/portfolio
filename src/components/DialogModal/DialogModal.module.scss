@@ -1,0 +1,10 @@
+@use '@/styles/partials/color' as c;
+@use '@/styles/partials/spacing' as s;
+
+.dialog-modal__box {
+  color: c.$light;
+  background-color: c.$primary-darken;
+  border-radius: s.$spacing-sm;
+  max-width: 100%;
+  padding: s.$spacing-xl;
+}

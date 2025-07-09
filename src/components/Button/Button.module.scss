@@ -19,7 +19,7 @@
   @each $color, $value in c.$variants {
     &--#{$color} {
       background-color: $value;
-      color: $value;
+      color: c.neutral-overlay($color);
     }
   }
 

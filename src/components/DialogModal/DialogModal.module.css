@@ -1,7 +1,0 @@
-.dialog-modal__box {
-  color: var(--color-light);
-  background-color: var(--color-primary-darken);
-  border-radius: var(--spacing-sm);
-  max-width: 100%;
-  padding: var(--spacing-xl);
-}

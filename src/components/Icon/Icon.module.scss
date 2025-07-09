@@ -1,0 +1,30 @@
+@use '@/styles/partials/color' as c;
+@use '@/styles/partials/spacing' as s;
+@use '@/styles/partials/transitions' as t;
+
+.icon {
+  transition: color t.$transition-dynamic;
+  background: none;
+  border: none;
+  outline: none;
+
+  @each $color, $value in c.$variants {
+    &--fill-#{$color} {
+      color: $value;
+    }
+
+    &--hover-fill-#{$color}:hover {
+      color: $value;
+    }
+  }
+
+  @each $size, $value in s.$spacings {
+    &--#{$size} {
+      font-size: calc($value * 1.5);
+    }
+  }
+
+  button.icon {
+    cursor: pointer;
+  }
+}

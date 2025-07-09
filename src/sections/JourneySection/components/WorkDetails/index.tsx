@@ -1,5 +1,5 @@
 import { Heading } from '@/components/Heading';
-import styles from './WorkDetails.module.css';
+import styles from './WorkDetails.module.scss';
 import { WorkExperience } from '@/types/experience';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
