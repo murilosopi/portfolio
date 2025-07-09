@@ -1,0 +1,19 @@
+$spacing-xxs: 0.25rem;
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+$spacing-xxxl: 4rem;
+
+$spacings: (
+  xxs: $spacing-xxs,
+  xs: $spacing-xs,
+  sm: $spacing-sm,
+  md: $spacing-md,
+  lg: $spacing-lg,
+  xl: $spacing-xl,
+  xxl: $spacing-xxl,
+  xxxl: $spacing-xxxl
+);

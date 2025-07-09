@@ -1,6 +1,6 @@
 import { firaCode } from '@/fonts/firaCode';
 import { firaSans } from '@/fonts/firaSans';
-import '@/styles/index.css';
+import '@/styles/globals.scss';
 import classNames from 'classnames';
 import { Metadata } from 'next';
 

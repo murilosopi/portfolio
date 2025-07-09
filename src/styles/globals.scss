@@ -1,0 +1,44 @@
+@use 'partials/color' as c;
+@use 'partials/typography' as t;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: t.$font-family-body;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-normal;
+  color: c.$light;
+  background-color: c.$dark;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@each $size, $value in t.$font-sizes-heading {
+  h#{$size} {
+    font-family: var(--font-family-heading);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-bold);
+    color: c.$light;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: $value;
+  }
+}
+
+p {
+  margin-bottom: t.$font-size-base;
+}

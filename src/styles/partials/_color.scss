@@ -1,0 +1,32 @@
+$primary: #6c1bc0;
+$primary-condensed: #4c1386;
+$primary-darken: #130d19;
+$dark: #0b0c0e;
+$light: #cdcdcd;
+
+$variants: (
+  primary: $primary,
+  primary-condensed: $primary-condensed,
+  primary-darken: $primary-darken,
+  dark: $dark,
+  light: $light
+);
+
+$vertical-gradient-primary-darken-to-dark: linear-gradient(
+  to bottom,
+  $primary-darken 70%,
+  $dark
+);
+
+$vertical-gradient-dark-to-primary-darken: linear-gradient(
+  to bottom,
+  $dark 70%,
+  $primary-darken
+);
+
+$gradients: (
+  vertical-gradient-primary-darken-to-dark:
+    $vertical-gradient-primary-darken-to-dark,
+  vertical-gradient-dark-to-primary-darken:
+    $vertical-gradient-dark-to-primary-darken
+);
