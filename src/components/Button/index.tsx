@@ -5,7 +5,7 @@ type ButtonProps = {
   variant?: ColorVariant;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-import styles from './Button.module.css';
+import styles from './Button.module.scss';
 import { ColorVariant } from '@/constants/colors';
 
 export const Button = ({

@@ -1,0 +1,34 @@
+@use '@/styles/partials/color' as c;
+@use '@/styles/partials/typography' as t;
+@use '@/styles/partials/spacing' as s;
+@use '@/styles/partials/transitions' as tr;
+
+.button {
+  border: none;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: t.$font-weight-semibold;
+  font-family: t.$font-family-heading;
+  font-size: t.$font-size-md;
+  padding: s.$spacing-xxs s.$spacing-lg;
+  border-radius: s.$spacing-sm;
+  box-shadow: 1px 1px 19px 8px rgb(0 0 0 / 15%);
+  transition: tr.$transition-dynamic;
+
+  @each $color, $value in c.$variants {
+    &--#{$color} {
+      background-color: $value;
+      color: $value;
+    }
+  }
+
+  &:active {
+    transform: scale(0.99);
+    filter: brightness(90%);
+  }
+
+  &:hover {
+    filter: brightness(95%);
+  }
+}
