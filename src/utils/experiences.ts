@@ -5,8 +5,8 @@ interface SortExperiencesProps {
 }
 export const sortExperiences = ({ experiences }: SortExperiencesProps) => {
   return experiences.sort((a, b) => {
-    const aDate = a.finalDate || a.initialDate;
-    const bDate = b.finalDate || b.initialDate;
+    const aDate = a.initialDate;
+    const bDate = b.initialDate;
 
     if (aDate < bDate) return -1;
     if (aDate > bDate) return 1;

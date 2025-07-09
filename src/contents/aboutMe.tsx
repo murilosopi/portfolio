@@ -33,7 +33,12 @@ export const aboutMeContent: Record<Language, AboutMeContent> = {
         Hello! I am <strong>Murilo Sopi</strong>,
       </>
     ),
-    lead: "A text to inspire the public. Wow. That's a really amazing phrase...",
+    lead: (
+      <>
+        Technology as a tool, creativity as a language, and impact as the
+        purpose. Coding experiences that <i>transform</i> the world.
+      </>
+    ),
     avatar: {
       src: '/images/avatar.jpg',
       alt: 'a man with black, long and curly hair, wearing a black jacket and a black t-shirt, smiling at the camera',
@@ -61,7 +66,12 @@ export const aboutMeContent: Record<Language, AboutMeContent> = {
         Olá! Eu sou o <strong>Murilo Sopi</strong>,
       </>
     ),
-    lead: 'Um texto para inspirar o público. Uau. Essa é uma frase realmente incrível...',
+    lead: (
+      <>
+        Tecnologia como ferramenta, criatividade como linguagem e impacto como
+        propósito. Codificando experiências que <i>transformam</i> o mundo.
+      </>
+    ),
     avatar: {
       src: '/images/avatar.jpg',
       alt: 'um homem com cabelo preto, longo e cacheado, vestindo uma jaqueta preta e uma camiseta preta, sorrindo para a câmera',

@@ -5,6 +5,7 @@ import { If } from '@/components/If';
 import { OptionalLanguage } from '@/types/language';
 import { defaultLanguage } from '@/data/languages';
 import { experiencesContent } from '@/contents/experiences';
+import { dateToLongLocale } from '@/utils/dateToLongLocale';
 
 export const EducationalDetails = ({
   experience,
@@ -17,12 +18,10 @@ export const EducationalDetails = ({
   const { insightsAndLearnings, period, institution } =
     experiencesContent[lang];
 
-  const formattedInitialDate = initialDate.toLocaleDateString(lang, {
-    dateStyle: 'long'
-  });
+  const formattedInitialDate = dateToLongLocale(initialDate, lang);
 
   const formattedFinalDate = finalDate
-    ? finalDate.toLocaleDateString(lang, { dateStyle: 'long' })
+    ? dateToLongLocale(finalDate, lang)
     : period.now;
 
   return (

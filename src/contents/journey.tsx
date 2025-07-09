@@ -13,7 +13,7 @@ export const journeyContent: Record<Language, JourneyContent> = {
   en: {
     prelude: (
       <>
-        Know my <strong>experiencies</strong> exploring my
+        Discover the <strong>stories and lessons</strong> behind my
       </>
     ),
     heading: 'Journey',
@@ -22,7 +22,8 @@ export const journeyContent: Record<Language, JourneyContent> = {
   pt: {
     prelude: (
       <>
-        Conheça minhas <strong>experiências</strong> explorando minha,
+        Venha conhecer as <strong>histórias e aprendizados</strong> que moldaram
+        minha
       </>
     ),
     heading: 'Jornada',
